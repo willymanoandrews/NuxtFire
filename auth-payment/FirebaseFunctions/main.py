@@ -16,7 +16,13 @@ db = firestore.client()
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 stripe_webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
 
-@https_fn.on_request(cors=options.CorsOptions(cors_origins="*", cors_methods=["get", "post"]))
+# Updated create_subscription function with CORS restrictions
+@https_fn.on_request(
+    cors=options.CorsOptions(
+        cors_origins=[r"https://your-production-domain\.com$", r"http://localhost:3000"],  # Allow only trusted origins
+        cors_methods=["get", "post"]
+    )
+)
 def create_subscription(req: https_fn.Request) -> https_fn.Response:
     try:
         data = req.get_json()
@@ -64,8 +70,9 @@ def create_subscription(req: https_fn.Request) -> https_fn.Response:
         print(f"Error: {str(e)}")  # Log the error
         return https_fn.Response(json.dumps({"error": str(e)}), status=400, mimetype='application/json')
 
+
 # Stripe Webhook Function to listen for subscription and payment events
-@https_fn.on_request(cors=options.CorsOptions(cors_origins="*", cors_methods=["post"]))
+@https_fn.on_request()  # No CORS needed for webhooks
 def stripe_webhook(req: https_fn.Request) -> https_fn.Response:
     payload = req.get_data(as_text=True)
     sig_header = req.headers.get('Stripe-Signature')

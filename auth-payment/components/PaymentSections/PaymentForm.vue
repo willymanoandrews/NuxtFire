@@ -86,7 +86,7 @@ const handlePayment = async () => {
     }
 
     // Step 2: Send payment method, price, email, and uid to the server
-    const apiUrl = `${config.public.apiBaseUrl}/create_subscription`;
+    const apiUrl = config.public.paymentApiUrl;
     const response = await axios.post(apiUrl, {
       uid: currentUser.uid,          // Add the user's UID
       email: currentUser.email,      // Add the user's email

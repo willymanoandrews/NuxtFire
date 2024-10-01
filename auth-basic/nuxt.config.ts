@@ -1,6 +1,5 @@
-// nuxt.config.ts
-
 export default defineNuxtConfig({
+  // Runtime configuration for Firebase
   runtimeConfig: {
     public: {
       firebaseApiKey: process.env.FIREBASE_API_KEY,
@@ -10,9 +9,6 @@ export default defineNuxtConfig({
       firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       firebaseAppId: process.env.FIREBASE_APP_ID,
       firebaseMeasurementId: process.env.FIREBASE_MEASUREMENT_ID,
-      stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-      stripePriceId: process.env.STRIPE_PRICE_ID,
-      paymentApiUrl: process.env.NUXT_PUBLIC_PAYMENT_API_URL,
     },
   },
 
