@@ -10,8 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.13.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "@nuxtjs/seo": "^2.0.0-rc.15",
+    "@stripe/stripe-js": "^4.1.0",
+    "axios": "^1.7.2",
+    "flowbite": "^2.4.1",
+    "nuxt": "^3.12.3",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0"
   }
 }

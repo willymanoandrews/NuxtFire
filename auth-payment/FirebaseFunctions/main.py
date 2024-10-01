@@ -159,7 +159,7 @@ def on_subscription_payment_succeeded(event: firestore_fn.Event[firestore.Docume
             mail_doc = {
                 'to': [email],
                 'message': {
-                    'subject': 'Your subscription to the Gay Nation is now active!',
+                    'subject': 'Your subscription is now active!',
                     'text': f'Thank you for your subscription. We have received a payment of {amount_paid_dollars}. '
                             f'Your transaction ID is {transaction_id}.',
                     'html': f'<p>Thank you for your subscription. We have received a payment of '
