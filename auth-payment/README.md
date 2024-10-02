@@ -1,75 +1,55 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Auth Payment Template
 
-## Setup
+This directory contains an authentication and payment template using Nuxt 3 and Firebase. It provides user sign-up, login functionality, and payment integration with Stripe. This template also includes middleware protection for premium content and examples of Stripe integration for subscription and one-time payments.
 
-Make sure to install the dependencies:
+## Getting Started
+
+Follow the steps below to set up the auth-payment template:
+
+### 1. Clone the Repository
+Start by cloning the main repository:
 
 ```bash
-# npm
+git clone git@github.com:willymanoandrews/NuxtFireProd.git
+```
+
+### 2. Copy the `auth-payment` Directory
+Navigate into the project and copy the `auth-payment` directory into a new directory where you'd like to start your project:
+
+```bash
+cp -r auth-payment <your-new-directory-name>
+cd <your-new-directory-name>
+```
+
+### 3. Install Dependencies
+Make sure you have Node.js and npm installed. Then, run the following command to install the necessary dependencies:
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### 4. Create an .env File
+Create a new `.env` file in the root directory of your project and add your Firebase and Stripe project details. These include your Stripe API keys, webhook signing secret, and Firebase configuration.
 
-Start the development server on `http://localhost:3000`:
+### 5. Initialize Firebase in the Project Directory
+If you haven't already installed Firebase tools, follow these steps to initialize Firebase in your project directory:
 
-```bash
-# npm
-npm run dev
+1. **Install Firebase CLI** (if not already installed):
+   ```bash
+   npm install -g firebase-tools
+   ```
+2. **Login to Firebase** (if not already logged in):
+   ```bash
+   firebase login
+   ```
 
-# pnpm
-pnpm run dev
+3. **Initialize Firebase Functions** (if not already logged in):
+   ```bash
+   firebase init functions
+   ```
+   When prompted:
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+   - Select your Firebase project.
+   - Choose Python for the functions runtime.
+   - Do not install dependencies yet (you'll do this later).
