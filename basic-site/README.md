@@ -18,7 +18,7 @@ Follow the steps below to set up the basic site template:
 Start by cloning the main repository:
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:willymanoandrews/NuxtFireProd.git
 ```
 
 ### 2. Copy the `basic-site` Directory
