@@ -52,3 +52,109 @@ When prompted:
 - Select your Firebase project.
 - Choose Python for the functions runtime.
 - Do not install dependencies yet (you'll do this later).
+
+### 6. Navigate to Functions Directory and Install Dependencies
+Once Firebase initialization is complete:
+- Navigate to the 'functions' directory:
+
+```bash
+cd functions
+```
+
+- Copy/paste the `requirements.txt` and `main.py` into the `functions` directory.
+- On macOS or Linux: Run the following command to activate the virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+- On Windows: Run the following command:
+
+```bash
+.\venv\Scripts\activate
+```
+
+- Install the necessary dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+- After the installation, test your functions locally using Firebase Emulators:
+
+```bash
+firebase emulators:start
+```
+
+- After starting the emulators retrieve your functions URL:
+
+```bash
+✔ functions[us-central1-create_subscription]: http function initialized (http://127.0.0.1:5001/your-project/us-central1/create_subscription)
+```
+
+- Use the Stripe CLI to test your webhook function. For example, use the following command to forward events to your webhook URL:
+
+```bash
+stripe listen --forward-to http://127.0.0.1:5001/your-project/us-central1/stripe_webhook
+```
+
+- Create an `.env` file in the root of your Nuxt directory using your Stripe API key (testing) and the webhook signing secret obtained from the Stripe CLI.
+
+- Example `.env` content:
+
+```bash
+STRIPE_API_KEY=sk_test_your_stripe_api_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_signing_secret
+```
+
+- Initiliaze Firebase Emulators:
+
+```bash
+firebase init emulators
+```
+
+- When prompted, select `Auth` and `Firestore` emulators
+- Use the default ports for the emulators.
+- Enable the Emulator UI and download the emulators if prompted:
+
+```bash
+firebase emulators:start
+```
+
+- Ensure that the emulators are running properly before proceeding. You should see the local services initialized and ready for use.
+
+- Once the emulators are running correctly, install the Firebase extension to send emails from Firestore. This will allow you to automatically send emails when triggered by events:
+
+```bash
+firebase ext:install firebase/firestore-send-email@0.1.34
+```
+
+Follow the prompts to configure the extension:
+
+1. Grant the necessary roles for the extension to send emails.
+2. Enter your SMTP URI details (you will need this information from your email provider).
+3. Choose where to store the secret (e.g., local file or a secure environment).
+4. Enter the SMTP password when prompted.
+5. Set the default Firestore collection to store email data (keep it as the default `mail` collection unless you want a custom one).
+6. Enter the default "from" email address (this will be the sender of your outgoing emails).
+7. Optionally, configure TTL (Time-to-Live) if needed to automatically delete documents after a set time.
+8. Choose default values or customize the extension configuration as needed.
+
+### 7. Test the Firebase Extension
+
+After configuring the extension, test that it's working by triggering an email send from Firestore. Add a document to the Firestore `mail` collection and ensure the email is sent through your SMTP server.
+
+### 8. Run the Development Server
+
+Make sure your Firebase emulators are still running. Then, run the Nuxt 3 development server:
+
+```bash
+npm run dev
+```
+Your application should now be running locally, and you can test user sign-up, login, payment flows, and email notifications.
+
+### 9. Test and Code
+
+Verify that all authentication and payment flows are working as expected. Check that emails are sent when appropriate (e.g., after a successful payment).
+
+From here, you can customize the code and start building your project!
