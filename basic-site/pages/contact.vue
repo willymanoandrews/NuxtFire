@@ -1,8 +1,13 @@
 <template>
-
+  <section class="pt-24">
+    <!-- Use FormContact component -->
+    <FormContact />
+  </section>
 </template>
 
 <script setup lang="ts">
+import FormContact from '~/components/ContactSections/FormContact.vue';
+
 // useSeoMeta for SEO-specific meta tags for the contact page
 useSeoMeta({
   title: 'Contact Us - My Amazing Site',

@@ -1,10 +1,19 @@
 <template>
   <div>
-    <!-- Sections have been removed -->
+    <section class="pt-24">
+      <!-- Use HeaderUnderline component with props -->
+      <HeaderUnderline
+        title="Welcome to the"
+        highlightedText="About Section"
+        description="This is placeholder text for the about page. Use this section to introduce your company's story, mission, and values."
+      />
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import HeaderUnderline from '~/components/AboutSections/HeaderUnderline.vue';
+
 // useSeoMeta for SEO-specific meta tags for the about page
 useSeoMeta({
   title: 'About Us - My Amazing Site',

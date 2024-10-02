@@ -1,10 +1,19 @@
 <template>
   <div>
-    <!-- Removed imported sections -->
+    <section class="pt-24">
+      <!-- Use HeaderUnderline component with props -->
+      <HeaderUnderline
+        title="Welcome to the"
+        highlightedText="Services Section"
+        description="This is placeholder text for the services page. Use this section to highlight the range of services you offer to help businesses succeed."
+      />
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import HeaderUnderline from '~/components/ServiceSections/HeaderUnderline.vue';
+
 // useSeoMeta for SEO-specific meta tags for the services page
 useSeoMeta({
   title: 'Our Services - My Amazing Site',
@@ -15,7 +24,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
-// Removed the imports of the sections
+// Use the custom ExampleOg template for OG Image Component with default props
+defineOgImageComponent('ExampleOg', {
+  // No props provided
+})
 </script>
 
 <style scoped>
