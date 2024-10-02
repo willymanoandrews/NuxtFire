@@ -98,7 +98,7 @@ firebase emulators:start
 stripe listen --forward-to http://127.0.0.1:5001/your-project/us-central1/stripe_webhook
 ```
 
-- Create an `.env` file in the root of your Nuxt directory using your Stripe API key (testing) and the webhook signing secret obtained from the Stripe CLI.
+- Create an `.env` file in the functions directory using your Stripe API key (testing) and the webhook signing secret obtained from the Stripe CLI.
 
 - Example `.env` content:
 
@@ -144,7 +144,12 @@ Follow the prompts to configure the extension:
 
 After configuring the extension, test that it's working by triggering an email send from Firestore. Add a document to the Firestore `mail` collection and ensure the email is sent through your SMTP server.
 
-### 8. Run the Development Server
+### 8. Add Your .env File
+
+Add your working `.env` file based on the `.env.example` provided. This file should be placed in the root directory of your Nuxt project, separate from the `.env` file used for Firebase functions.
+
+
+### 9. Run the Development Server
 
 Make sure your Firebase emulators are still running. Then, run the Nuxt 3 development server:
 
@@ -153,7 +158,7 @@ npm run dev
 ```
 Your application should now be running locally, and you can test user sign-up, login, payment flows, and email notifications.
 
-### 9. Test and Code
+### 10. Test and Code
 
 Verify that all authentication and payment flows are working as expected. Check that emails are sent when appropriate (e.g., after a successful payment).
 
