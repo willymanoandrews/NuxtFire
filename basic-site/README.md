@@ -1,75 +1,49 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Basic Site Template
 
-## Setup
+This directory contains a simple 5-page website template built using Nuxt 3. It includes the following pages:
+- Home
+- About
+- Services
+- Projects
+- Contact
 
-Make sure to install the dependencies:
+This template is ideal for creating a basic website with minimal setup and ready-to-use pages. It also integrates Flowbite's Tailwind CSS components for a clean and responsive design.
+
+## Getting Started
+
+Follow the steps below to set up the basic site template:
+
+### 1. Clone the Repository
+Start by cloning the main repository:
 
 ```bash
-# npm
+git clone <your-repo-url>
+```
+
+### 2. Copy the `basic-site` Directory
+Navigate into the project and copy the `basic-site` directory into a new directory where you'd like to start your project:
+
+```bash
+cp -r basic-site <your-new-directory-name>
+cd <your-new-directory-name>
+```
+
+### 3. Install Dependencies
+Make sure you have Node.js and npm installed. Then, run the following command to install the necessary dependencies:
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### 4. Run the Development Server
+Once the dependencies are installed, you can start the development server:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Your website will be available at [http://localhost:3000](http://localhost:3000).
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### 5. Start Coding!
+Feel free to customize the code to fit your needs. The basic structure is set up for you, and you can start building your site by modifying the components, pages, and styles as required.
