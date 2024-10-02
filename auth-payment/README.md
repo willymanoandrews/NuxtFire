@@ -48,8 +48,7 @@ If you haven't already installed Firebase tools, follow these steps to initializ
    ```bash
    firebase init functions
    ```
-   When prompted:
-
-   - Select your Firebase project.
-   - Choose Python for the functions runtime.
-   - Do not install dependencies yet (you'll do this later).
+When prompted:
+- Select your Firebase project.
+- Choose Python for the functions runtime.
+- Do not install dependencies yet (you'll do this later).
