@@ -55,15 +55,14 @@ For the `auth-payment` template's Nuxt.env file, you will need to configure the 
 #### Firebase Configuration
 You will need your Firebase configuration details.
 
-```bash
-FIREBASE_API_KEY=your-api-key-here
-FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
-FIREBASE_PROJECT_ID=your-project-id-here
-FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
-FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
-FIREBASE_APP_ID=your-app-id-here
-FIREBASE_MEASUREMENT_ID=your-measurement-id-here
-```
+- Firebase API Key
+- Firebase Auth Domain
+- Firebase Project ID
+- Firebase Storage Bucket
+- Firebase Messaging Sender ID
+- Firebase App ID
+- Firebase Measurement ID
+
 
 #### Stripe Configuration
 
@@ -71,18 +70,16 @@ For the payment integration, you'll need your Stripe Publishable Key and Price I
 
 **Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
 
-```bash
-STRIPE_PUBLISHABLE_KEY=insert_your_stripe_publishable_key_here
-STRIPE_PRICE_ID=insert_your_stripe_price_id_here
-```
+- Stripe Publishable Key
+- Stripe Price ID
+
 
 #### Base URL
 
 You will need the URL for the backend API that handles payments. In local development, this will be the Firebase function URL that processes the payment. You will see the function URL when you run the Firebase functions emulator, for example:
 
-```bash
-NUXT_PUBLIC_PAYMENT_API_URL=http://localhost:5001/your-project-id/us-central1/your-function-name
-```
+- Payment API URL
+
 
 This URL will be generated after running Firebase emulators for functions. Make sure to replace it with the correct URL when deploying to production.
 
@@ -90,10 +87,9 @@ This URL will be generated after running Firebase emulators for functions. Make 
 
 These variables are required for processing payments and handling Stripe webhooks in Firebase functions:
 
-```bash
-STRIPE_API_KEY=your-stripe-api-key-here
-STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret-here
-```
+- Stripe API Key
+- Stripe Webhook Secret
+
 
 **Note:** The `STRIPE_WEBHOOK_SECRET` is generated when you use the Stripe CLI to listen to your webhook function.
 

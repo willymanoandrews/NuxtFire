@@ -39,15 +39,14 @@ For the `auth-basic` template's Nuxt.env file, you will need to configure the fo
 #### Firebase Configuration
 You will need your Firebase configuration details.
 
-```bash
-FIREBASE_API_KEY=your-api-key-here
-FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
-FIREBASE_PROJECT_ID=your-project-id-here
-FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
-FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
-FIREBASE_APP_ID=your-app-id-here
-FIREBASE_MEASUREMENT_ID=your-measurement-id-here
-```
+- Firebase API Key
+- Firebase Auth Domain
+- Firebase Project ID
+- Firebase Storage Bucket
+- Firebase Messaging Sender ID
+- Firebase App ID
+- Firebase Measurement ID
+
 
 # Auth Basic Template
 
