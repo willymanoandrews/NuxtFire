@@ -55,7 +55,6 @@ This boilerplate takes advantage of several powerful Nuxt modules and features t
 ### 2. Flowbite Tailwind CSS
 - **Module:** flowbite
 - **Description:** Flowbite is a Tailwind CSS component library. Pre-built UI components help accelerate development.
-
-**Features:**
+- **Features:**
   - A collection of responsive and customizable components.
   - Simple integration into your project.
