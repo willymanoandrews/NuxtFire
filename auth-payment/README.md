@@ -48,7 +48,7 @@ You will need to create a product in Stripe with a **subscription payment type**
 - Go to your Stripe Dashboard and create a product under **Products** with a recurring payment option.
 - Once created, retrieve the **Price ID** for the product, which will be used in your environment configuration.
 
-### 5. .env File Setup for Nuxt
+### 5. Variables needed for Nuxt
 
 For the `auth-payment` template's Nuxt.env file, you will need to configure the following environment variables. Ensure that you have the required Firebase and Stripe credentials to complete the setup.
 
@@ -69,7 +69,7 @@ FIREBASE_MEASUREMENT_ID=your-measurement-id-here
 
 For the payment integration, you'll need your Stripe Publishable Key and Price ID. The Price ID should be associated with the subscription product you created in Stripe.
 
-**Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
+**Important:**  Again be sure to use your **test keys** from Stripe, not the production keys.
 
 ```bash
 STRIPE_PUBLISHABLE_KEY=insert_your_stripe_publishable_key_here
@@ -86,7 +86,7 @@ NUXT_PUBLIC_PAYMENT_API_URL=http://localhost:5001/your-project-id/us-central1/yo
 
 This URL will be generated after running Firebase emulators for functions. Make sure to replace it with the correct URL when deploying to production.
 
-### 6. .env File Setup for Firebase
+### 6. Variables needed for Firebase
 
 These variables are required for processing payments and handling Stripe webhooks in Firebase functions:
 
@@ -101,8 +101,16 @@ This secret is essential for verifying webhook events sent to your Firebase func
 
 **Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
 
+### SMTP Configuration for Firestore Email Extension
 
+For the `Trigger Email from Firestore` extension, you will also need your:
 
+```bash
+SMTP_CONNECTION_URI=your-smtp-connection-uri-here
+SMTP_PASSWORD=your-smtp-password-here
+```
+
+When configuring the extension.
 
 # Auth Payment Template
 

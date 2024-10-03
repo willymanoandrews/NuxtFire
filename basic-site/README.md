@@ -1,3 +1,17 @@
+### Prerequisites
+
+Before you can start with this boilerplate, make sure you have the following installed and configured:
+
+### 1. Node.js & npm
+Ensure that you have Node.js (version 14.x or higher) and npm installed.
+To check if they are installed, run the following commands in your terminal:
+
+```bash
+node -v
+npm -v
+```
+
+If not installed, download and install them from [https://nodejs.org/](https://nodejs.org/).
 
 # Basic Site Template
 
