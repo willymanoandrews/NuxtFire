@@ -14,7 +14,7 @@ This directory contains pre-built Flowbite Tailwind CSS components converted to 
 
 ## How to Use
 
-1. Copy the desired component from the `flowbite-components` directory into your Nuxt project's components directory:
+1. Copy the desired component from the `flowbite-components` directory into your Nuxt project's components directory.
 
 2. Import the component into your other vue files.
 
