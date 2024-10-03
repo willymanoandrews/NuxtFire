@@ -69,7 +69,7 @@ FIREBASE_MEASUREMENT_ID=your-measurement-id-here
 
 For the payment integration, you'll need your Stripe Publishable Key and Price ID. The Price ID should be associated with the subscription product you created in Stripe.
 
-**Important:**  Again be sure to use your **test keys** from Stripe, not the production keys.
+**Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
 
 ```bash
 STRIPE_PUBLISHABLE_KEY=insert_your_stripe_publishable_key_here
@@ -99,7 +99,7 @@ STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret-here
 
 This secret is essential for verifying webhook events sent to your Firebase function.
 
-**Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
+**Important:** Again be sure to use your **test keys** from Stripe, not the production keys.
 
 ### SMTP Configuration for Firestore Email Extension
 
