@@ -12,9 +12,5 @@ import NavBar from '~/components/Common/NavBar.vue';
 </script>
 
 <style scoped>
-/* You can add styles for the layout or the content-container if needed */
-.content-container {
-  /* Add padding or any specific layout styles if necessary */
-  padding: 2rem; /* Example padding */
-}
+
 </style>

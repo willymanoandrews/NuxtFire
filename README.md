@@ -2,8 +2,6 @@
 
 This repository contains multiple boilerplate templates for building Nuxt 3 projects with Firebase integrations. Each directory serves a specific use case, providing you with ready-to-use code templates.
 
-## Available Boilerplates
-
 ### 1. Basic Site
 - **Directory:** `basic-site`
 - **Description:** A simple 5-page website template, perfect for small business websites.
@@ -43,50 +41,22 @@ This repository contains multiple boilerplate templates for building Nuxt 3 proj
 - **Features:**
   - Ready-made UI components for building interfaces quickly.
 
-### Prerequisites
+### Key Modules and Features
 
-Before you can start with this boilerplate, make sure you have the following installed and configured:
+This boilerplate takes advantage of several powerful Nuxt modules and features to streamline development and enhance functionality:
 
-### 1. Node.js & npm
-Ensure that you have Node.js (version 14.x or higher) and npm installed.
-To check if they are installed, run the following commands in your terminal:
+#### 1. Nuxt SEO Module
+- **Module:** [`@nuxtjs/seo`](https://nuxtseo.com/)
+- **Description:** This module simplifies managing SEO-related meta tags and Open Graph properties. It automatically generates SEO-friendly meta tags for each page and ensures best practices for search engines.
 
-```bash
-node -v
-npm -v
-```
+**Features:**
+  - A collection of responsive and customizable components.
+  - Simple integration into your project.
 
-If not installed, download and install them from [https://nodejs.org/](https://nodejs.org/).
+### 2. Flowbite Tailwind CSS
+**Module:** flowbite
+**Description:** Flowbite is a Tailwind CSS component library. Pre-built UI components help accelerate development.
 
-### 2. Firebase CLI
-
-The Firebase CLI is required to manage Firebase services and run emulators locally.
-Install the Firebase CLI by running the following command:
-
-```bash
-npm install -g firebase-tools
-```
-
-After installation, make sure to login to Firebase by running:
-
-```bash
-firebase login
-```
-
-### 3. Firebase Project
-
-You will need a Firebase project for this boilerplate. If you don't have one, you can create it in the [Firebase Console](https://console.firebase.google.com/).
-
-### 4. Stripe Account
-If you are using the `auth-payment` or `one-time-payment` templates, you will need a Stripe account and API keys to process payments.
-
-- Sign up at [Stripe](https://stripe.com) and obtain your API keys.
-- Additionally, install the Stripe CLI for testing webhooks locally:
-
-  To install the Stripe CLI, follow the official instructions at [Stripe CLI Documentation](https://stripe.com/docs/stripe-cli).
-
-With the Stripe CLI, you can easily test webhooks and ensure that payment flows work properly in your local environment.
-
-### 5. .env File Setup
-
-Ensure that you have the necessary Firebase and Stripe configuration variables ready to be placed in the .env files. You will configure these details in the specific sections for each template.
+**Features:**
+  - A collection of responsive and customizable components.
+  - Simple integration into your project.
