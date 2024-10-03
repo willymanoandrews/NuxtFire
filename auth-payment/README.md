@@ -105,10 +105,9 @@ This secret is essential for verifying webhook events sent to your Firebase func
 
 For the `Trigger Email from Firestore` extension, you will also need your:
 
-```bash
-SMTP_CONNECTION_URI=your-smtp-connection-uri-here
-SMTP_PASSWORD=your-smtp-password-here
-```
+- SMTP Connection URI
+- SMTP Password
+
 
 When configuring the extension.
 
