@@ -48,14 +48,13 @@ This boilerplate takes advantage of several powerful Nuxt modules and features t
 #### 1. Nuxt SEO Module
 - **Module:** [`@nuxtjs/seo`](https://nuxtseo.com/)
 - **Description:** This module simplifies managing SEO-related meta tags and Open Graph properties. It automatically generates SEO-friendly meta tags for each page and ensures best practices for search engines.
-
-**Features:**
+- **Features:**
   - A collection of responsive and customizable components.
   - Simple integration into your project.
 
 ### 2. Flowbite Tailwind CSS
-**Module:** flowbite
-**Description:** Flowbite is a Tailwind CSS component library. Pre-built UI components help accelerate development.
+- **Module:** flowbite
+- **Description:** Flowbite is a Tailwind CSS component library. Pre-built UI components help accelerate development.
 
 **Features:**
   - A collection of responsive and customizable components.
