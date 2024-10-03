@@ -1,3 +1,53 @@
+### Prerequisites
+
+Before you can start with this boilerplate, make sure you have the following installed and configured:
+
+### 1. Node.js & npm
+Ensure that you have Node.js (version 14.x or higher) and npm installed.
+To check if they are installed, run the following commands in your terminal:
+
+```bash
+node -v
+npm -v
+```
+
+If not installed, download and install them from [https://nodejs.org/](https://nodejs.org/).
+
+### 2. Firebase CLI
+
+The Firebase CLI is required to manage Firebase services and run emulators locally.
+Install the Firebase CLI by running the following command:
+
+```bash
+npm install -g firebase-tools
+```
+
+After installation, make sure to login to Firebase by running:
+
+```bash
+firebase login
+```
+
+### 3. Firebase Project
+
+You will need a Firebase project for this boilerplate. If you don't have one, you can create it in the [Firebase Console](https://console.firebase.google.com/).
+
+### 5. .env File Setup for Nuxt
+
+For the `auth-basic` template's Nuxt.env file, you will need to configure the following environment variables. Ensure that you have the required Firebase credentials to complete the setup.
+
+#### Firebase Configuration
+You will need your Firebase configuration details.
+
+```bash
+FIREBASE_API_KEY=your-api-key-here
+FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
+FIREBASE_PROJECT_ID=your-project-id-here
+FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
+FIREBASE_APP_ID=your-app-id-here
+FIREBASE_MEASUREMENT_ID=your-measurement-id-here
+```
 
 # Auth Basic Template
 

@@ -1,3 +1,108 @@
+### Prerequisites
+
+Before you can start with this boilerplate, make sure you have the following installed and configured:
+
+### 1. Node.js & npm
+Ensure that you have Node.js (version 14.x or higher) and npm installed.
+To check if they are installed, run the following commands in your terminal:
+
+```bash
+node -v
+npm -v
+```
+
+If not installed, download and install them from [https://nodejs.org/](https://nodejs.org/).
+
+### 2. Firebase CLI
+
+The Firebase CLI is required to manage Firebase services and run emulators locally.
+Install the Firebase CLI by running the following command:
+
+```bash
+npm install -g firebase-tools
+```
+
+After installation, make sure to login to Firebase by running:
+
+```bash
+firebase login
+```
+
+### 3. Firebase Project
+
+You will need a Firebase project for this boilerplate. If you don't have one, you can create it in the [Firebase Console](https://console.firebase.google.com/).
+
+### 4. Stripe Account
+You will need a Stripe account and API keys to process payments.
+
+- Sign up at [Stripe](https://stripe.com) and obtain your API keys.
+- Additionally, install the Stripe CLI for testing webhooks locally:
+
+  To install the Stripe CLI, follow the official instructions at [Stripe CLI Documentation](https://stripe.com/docs/stripe-cli).
+
+With the Stripe CLI, you can easily test webhooks and ensure that payment flows work properly in your local environment.
+
+**Additional Requirement:**
+You will need to create a product in Stripe with a **subscription payment type** to obtain a Stripe Price ID. This Price ID is required in the `auth-payment` template for subscription-based services.
+
+- Go to your Stripe Dashboard and create a product under **Products** with a recurring payment option.
+- Once created, retrieve the **Price ID** for the product, which will be used in your environment configuration.
+
+### 5. .env File Setup for Nuxt
+
+For the `auth-payment` template's Nuxt.env file, you will need to configure the following environment variables. Ensure that you have the required Firebase and Stripe credentials to complete the setup.
+
+#### Firebase Configuration
+You will need your Firebase configuration details.
+
+```bash
+FIREBASE_API_KEY=your-api-key-here
+FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
+FIREBASE_PROJECT_ID=your-project-id-here
+FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
+FIREBASE_APP_ID=your-app-id-here
+FIREBASE_MEASUREMENT_ID=your-measurement-id-here
+```
+
+#### Stripe Configuration
+
+For the payment integration, you'll need your Stripe Publishable Key and Price ID. The Price ID should be associated with the subscription product you created in Stripe.
+
+**Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
+
+```bash
+STRIPE_PUBLISHABLE_KEY=insert_your_stripe_publishable_key_here
+STRIPE_PRICE_ID=insert_your_stripe_price_id_here
+```
+
+#### Base URL
+
+You will need the URL for the backend API that handles payments. In local development, this will be the Firebase function URL that processes the payment. You will see the function URL when you run the Firebase functions emulator, for example:
+
+```bash
+NUXT_PUBLIC_PAYMENT_API_URL=http://localhost:5001/your-project-id/us-central1/your-function-name
+```
+
+This URL will be generated after running Firebase emulators for functions. Make sure to replace it with the correct URL when deploying to production.
+
+### 6. .env File Setup for Firebase
+
+These variables are required for processing payments and handling Stripe webhooks in Firebase functions:
+
+```bash
+STRIPE_API_KEY=your-stripe-api-key-here
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret-here
+```
+
+**Note:** The `STRIPE_WEBHOOK_SECRET` is generated when you use the Stripe CLI to listen to your webhook function.
+
+This secret is essential for verifying webhook events sent to your Firebase function.
+
+**Important:** When developing and testing the payment flows, make sure to use **test keys** from Stripe, not the production keys. You can find your test keys in the Stripe Dashboard under the "Developers" section. Production keys should only be used in a live environment.
+
+
+
 
 # Auth Payment Template
 
