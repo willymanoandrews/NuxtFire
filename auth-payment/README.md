@@ -99,13 +99,11 @@ This secret is essential for verifying webhook events sent to your Firebase func
 
 ### SMTP Configuration for Firestore Email Extension
 
-For the `Trigger Email from Firestore` extension, you will also need your:
+When you configure the `Trigger Email from Firestore` extension, you will also need your:
 
 - SMTP Connection URI
 - SMTP Password
 
-
-When configuring the extension.
 
 # Auth Payment Template
 
@@ -138,7 +136,25 @@ npm install
 ```
 
 ### 4. Create an .env File
-Create a new `.env` file in the root directory of your project and add your Firebase and Stripe project details. These include your Stripe API keys, webhook signing secret, and Firebase configuration.
+Create a new `.env` file in the root directory of your Nuxt project and add your Firebase and Stripe project details. These include your Stripe publishable key, Stripe price ID, Firebase configuration and the Payment API URL (Add this one later).
+
+```bash
+# Firebase configuration - Replace these with your actual Firebase project details
+FIREBASE_API_KEY=your-api-key-here
+FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
+FIREBASE_PROJECT_ID=your-project-id-here
+FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
+FIREBASE_APP_ID=your-app-id-here
+FIREBASE_MEASUREMENT_ID=your-measurement-id-here
+
+# Stripe Configuration - Replace with your actual Stripe Publishable Key and Price ID
+STRIPE_PUBLISHABLE_KEY=insert_your_stripe_publishable_key_here
+STRIPE_PRICE_ID=insert_your_stripe_price_id_here
+
+# API Base URL - Replace with your actual base URL for the API
+NUXT_PUBLIC_PAYMENT_API_URL=insert_your_api_base_url_here
+```
 
 ### 5. Initialize Firebase in the Project Directory
 If you haven't already installed Firebase tools, follow these steps to initialize Firebase in your project directory:
