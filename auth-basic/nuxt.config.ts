@@ -1,3 +1,11 @@
+// nuxt.config.ts
+//
+// This file defines the main configuration for the Nuxt 3 application.
+// It includes runtime environment variables, compatibility settings, and module configurations.
+// Tailwind CSS and SEO modules are enabled, and route rules specify which pages use SSR or client-side rendering.
+// Firebase runtime configurations are also set up using environment variables.
+// Additionally, it configures site metadata for SEO purposes and a sitemap for better indexing.
+
 export default defineNuxtConfig({
   // Runtime configuration for Firebase
   runtimeConfig: {
@@ -34,10 +42,10 @@ export default defineNuxtConfig({
 
   // Site configuration for SEO modules
   site: {
-    url: "https://example.com",
-    name: "Awesome Site",
-    description: "Welcome to my awesome site!",
-    defaultLocale: "en", // Not needed if @nuxtjs/i18n is installed
+    url: "https://example.com", // The base URL for the site
+    name: "Awesome Site", // Site name for SEO
+    description: "Welcome to my awesome site!", // Meta description for SEO
+    defaultLocale: "en", // Default locale (optional if no i18n)
   },
 
   // Sitemap configuration

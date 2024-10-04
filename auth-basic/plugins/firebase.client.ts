@@ -1,3 +1,9 @@
+// plugins/firebase.client.ts
+//
+// This plugin initializes Firebase services (Authentication and Firestore) for the Nuxt 3 app.
+// It configures Firebase using runtime environment variables and connects to Firebase emulators in development mode.
+// Firebase Auth and Firestore instances are then provided globally for use throughout the app.
+
 import { initializeApp } from "firebase/app";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";

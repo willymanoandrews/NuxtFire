@@ -1,4 +1,9 @@
 // middleware/auth.js
+//
+// This middleware checks if a user is authenticated using Firebase Authentication.
+// It runs only on the client-side and ensures that unauthenticated users are redirected to the login page.
+// If there is an authentication error or the user is not logged in, it redirects to an appropriate page.
+// The middleware also listens to auth state changes to handle user authentication dynamically.
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 

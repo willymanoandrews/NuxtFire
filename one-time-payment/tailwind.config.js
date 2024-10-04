@@ -1,3 +1,9 @@
+// tailwind.config.js - Tailwind CSS configuration for the Nuxt 3 application.
+//
+// This configuration file sets up dark mode, content paths, theme extensions, and custom plugins.
+// It includes custom color palettes for the primary theme and defines the font families used across the app.
+// Additionally, it integrates the Flowbite plugin for UI components.
+
 module.exports = {
   darkMode: "media", // Enable dark mode based on user preference
   content: [

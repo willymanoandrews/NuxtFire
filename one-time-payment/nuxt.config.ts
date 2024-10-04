@@ -1,3 +1,9 @@
+// nuxt.config.ts - Main configuration file for your Nuxt 3 application.
+//
+// This file defines runtime configurations, compatibility settings, and modules used throughout the app.
+// It also sets up the environment variables, Tailwind CSS integration, and SEO module for better optimization.
+// Additionally, the site information such as URL, name, and description are configured here for global use.
+
 export default defineNuxtConfig({
   // Runtime Configuration
   runtimeConfig: {

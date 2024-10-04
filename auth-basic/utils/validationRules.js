@@ -1,4 +1,9 @@
 // src/utils/validationRules.js
+//
+// This file contains utility functions for form validation.
+// It provides validation rules for email, password, and confirm password fields,
+// returning specific error messages based on the input values.
+// These rules are typically used for validating user input in authentication forms.
 
 export const validateEmail = (emailValue) => {
   if (!emailValue) {

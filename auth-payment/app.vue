@@ -1,3 +1,8 @@
+<!--
+  This is the main entry point for the Nuxt app.
+  It sets up the layout and renders the current page using Nuxt's dynamic page system.
+  SEO meta tags are defined globally for better search engine optimization and social media sharing.
+-->
 <template>
   <NuxtLayout>
     <NuxtPage />

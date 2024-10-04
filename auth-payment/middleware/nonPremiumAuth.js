@@ -1,4 +1,10 @@
-// middleware/nonPremium.js
+// middleware/nonPremiumAuth.js
+//
+// This middleware checks if the user is authenticated and does not have a 'premium' role.
+// If the user is not authenticated, they are redirected to the login page.
+// If the user has a 'premium' role, they are redirected to the dashboard.
+// If the user does not have a 'premium' role or the user document does not exist, they are allowed access to the payment page.
+// The middleware is skipped on the server-side, as it is client-side only.
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";

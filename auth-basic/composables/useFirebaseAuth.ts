@@ -1,3 +1,10 @@
+// composables/useFirebaseAuth.ts
+//
+// This composable provides Firebase authentication functionality for your Nuxt 3 app.
+// It includes methods to register, login, reset password, and log out users using Firebase Authentication.
+// The composable also integrates Firestore to save user details upon registration.
+// It manages authentication state and error handling, with predefined error messages for common auth issues.
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,30 +14,31 @@ import {
   browserLocalPersistence,
   onAuthStateChanged,
   User,
-} from 'firebase/auth';
-import { useNuxtApp, useState, onMounted } from '#imports';
-import { doc, setDoc } from 'firebase/firestore'; // Firestore methods
+} from "firebase/auth";
+import { useNuxtApp, useState, onMounted } from "#imports";
+import { doc, setDoc } from "firebase/firestore"; // Firestore methods
 
 export default function useFirebaseAuth() {
   const { $auth, $firestore } = useNuxtApp(); // Access Firestore instance
 
-  const user = useState<User | null>('fb_user', () => null);
-  const errorMessage = useState<string | null>('auth_error', () => null);
+  const user = useState<User | null>("fb_user", () => null);
+  const errorMessage = useState<string | null>("auth_error", () => null);
 
   // Predefined error messages
   const errorMessages: { [key: string]: string } = {
-    'auth/user-not-found': 'No user found with this email address.',
-    'auth/wrong-password': 'Incorrect password. Please try again.',
-    'auth/invalid-email': 'The email address is invalid.',
-    'auth/email-already-in-use': 'This email address is already in use.',
-    'auth/weak-password': 'The password is too weak.',
-    'auth/network-request-failed': 'Network error. Please check your connection and try again.',
+    "auth/user-not-found": "No user found with this email address.",
+    "auth/wrong-password": "Incorrect password. Please try again.",
+    "auth/invalid-email": "The email address is invalid.",
+    "auth/email-already-in-use": "This email address is already in use.",
+    "auth/weak-password": "The password is too weak.",
+    "auth/network-request-failed":
+      "Network error. Please check your connection and try again.",
   };
 
   // Handle Firebase auth errors
   const handleAuthError = (error: any) => {
     const code = error.code;
-    errorMessage.value = errorMessages[code] || 'An unknown error occurred.';
+    errorMessage.value = errorMessages[code] || "An unknown error occurred.";
   };
 
   // Initialize Firebase persistence and listen to auth state
@@ -49,14 +57,21 @@ export default function useFirebaseAuth() {
   });
 
   // Register user and add to Firestore
-  const registerUser = async (email: string, password: string): Promise<boolean> => {
+  const registerUser = async (
+    email: string,
+    password: string,
+  ): Promise<boolean> => {
     errorMessage.value = null;
     try {
-      const userCreds = await createUserWithEmailAndPassword($auth, email, password);
+      const userCreds = await createUserWithEmailAndPassword(
+        $auth,
+        email,
+        password,
+      );
       user.value = userCreds.user;
 
       // Add the user to the Firestore 'users' collection
-      await setDoc(doc($firestore, 'users', userCreds.user.uid), {
+      await setDoc(doc($firestore, "users", userCreds.user.uid), {
         email: email,
         createdAt: new Date(),
       });
@@ -69,10 +84,17 @@ export default function useFirebaseAuth() {
   };
 
   // Log in user
-  const loginUser = async (email: string, password: string): Promise<boolean> => {
+  const loginUser = async (
+    email: string,
+    password: string,
+  ): Promise<boolean> => {
     errorMessage.value = null;
     try {
-      const userCreds = await signInWithEmailAndPassword($auth, email, password);
+      const userCreds = await signInWithEmailAndPassword(
+        $auth,
+        email,
+        password,
+      );
       user.value = userCreds.user;
       return true;
     } catch (error) {

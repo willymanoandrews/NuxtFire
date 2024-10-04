@@ -1,4 +1,9 @@
 // nuxt.config.ts
+//
+// This file defines the main configuration for the Nuxt 3 application.
+// It includes runtime environment variables for Firebase and Stripe, compatibility settings, and modules like Tailwind CSS and SEO.
+// Specific route rules are set up for SSR and client-side rendering, particularly for the dashboard.
+// Additionally, site metadata for SEO and sitemap configuration are defined for optimal search engine visibility.
 
 export default defineNuxtConfig({
   runtimeConfig: {

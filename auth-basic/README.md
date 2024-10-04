@@ -79,7 +79,17 @@ npm install
 ```
 
 ### 4. Create an .env File
-Create a new `.env` file in the root directory of your project and fill in the Firebase configuration details as needed.
+Create a new `.env` file in the root directory of your project and fill in the Firebase configuration details. Use the .env.example file for reference:
+
+```bash
+FIREBASE_API_KEY=your-api-key-here
+FIREBASE_AUTH_DOMAIN=your-auth-domain-here.firebaseapp.com
+FIREBASE_PROJECT_ID=your-project-id-here
+FIREBASE_STORAGE_BUCKET=your-storage-bucket-here.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id-here
+FIREBASE_APP_ID=your-app-id-here
+FIREBASE_MEASUREMENT_ID=your-measurement-id-here
+```
 
 ### 5. Initialize Firebase
 Initialize Firebase in your project by running the following command:

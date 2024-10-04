@@ -1,4 +1,9 @@
-// middleware/auth.js
+// middleware/premiumAuth.js
+//
+// This middleware checks if the user is authenticated and has a 'premium' role.
+// If the user is not authenticated, they are redirected to the login page.
+// If the user is authenticated but does not have the 'premium' role, they are redirected to the payment page.
+// If an error occurs while checking the user's role, the middleware redirects to an error page.
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
